@@ -1,0 +1,24 @@
+## *** 下方各项配置，确保输入配置格式正确，配置信息首尾注意不要留有空格等，当前版本暂不支持trimspace ***
+application:
+  name: evm-inscriptions
+chain:
+  # evm 通用evm的基本方式打mint，一般情况下，每个平台的mint都是支付手续费，data输入内容，即可mint
+  # reth 算力计算，获取结果，然后再去mint，此时不需要配置下方mint中的data
+  chainType: "evm"
+  # 链结点地址
+  # 备注：可前往此处 https://publicnode.com/ 查找满足你需要的免费evm结点url，比如下方配置里使用了马蹄链
+  url: "https://polygon-bor.publicnode.com"
+  # 请求超时时间，如无特殊必要，默认60即可，单位：秒
+  timeout: 60
+mint:
+  # mint 铸造次数，通俗说，批量铸造多少个，就配置多少
+  times: 10
+  # 私钥
+  privateKey: ""
+  # 配置gasPrice，单位是wei ； 备注：1Gwei = 1000000000 wei
+  gasPrice: "根据实际情况设置"
+  # 配置gasLimit
+  gasLimit: "根据实际情况设置"
+  # 铭文16进制字符串，比如mint马蹄链的anteater，则使用下面铭文（仅限示例，该铭文很有可能已经被mint完了）
+  # 如果上面chainType配置了reth，则该data参数无需配置（配置了也没任何用处），内部会自动算出提交
+  data: "0x646174613a2c7b2261223a224e657874496e736372697074696f6e222c2270223a226f7072632d3230222c226f70223a226d696e74222c227469636b223a22616e746561746572222c22616d74223a22313030303030303030227d"

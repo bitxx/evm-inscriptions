@@ -1,0 +1,17 @@
+.idea
+.vscode
+*/.DS_Store
+temp
+*.exe
+tmp/
+tmp/app
+!tmp
+#vendor
+settings.dev.yml
+common/middleware/demo.go
+settings.dev.*.yml
+tmp/logs
+
+go.sum
+*.tar.gz
+
