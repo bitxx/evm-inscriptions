@@ -59,6 +59,7 @@ func main() {
 
 	//开始mint
 	for i := 1; i <= config.MintConfig.Times; i++ {
+		time.Sleep(5 * time.Second) //防止多次异常，导致连续mint同一个nonce
 		balanceStr, er := evmApp.TokenBalanceOf()
 		err = er
 		if err != nil {
@@ -85,6 +86,5 @@ func main() {
 			continue
 		}
 		log.Infof("第%d张mint成功，hash：%s", i, hash)
-		time.Sleep(5 * time.Second)
 	}
 }
