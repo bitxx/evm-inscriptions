@@ -1,11 +1,9 @@
 package main
 
 import (
-	"errors"
 	"evm-inscriptions/app"
 	"evm-inscriptions/utils/config"
 	"evm-inscriptions/utils/log"
-	"fmt"
 	"github.com/bitxx/load-config/source/file"
 	"github.com/shopspring/decimal"
 	"time"
@@ -64,12 +62,14 @@ func main() {
 		balanceStr, er := evmApp.TokenBalanceOf()
 		err = er
 		if err != nil {
-			return
+			log.Errorf("第%d张读取账户余额异常，原因：%s", i, err)
+			continue
 		}
 		balance, er := decimal.NewFromString(balanceStr)
 		err = er
 		if err != nil {
-			return
+			log.Errorf("第%d张解析账户余额异常，原因：%s", i, err)
+			continue
 		}
 		log.Infof("当前账户余额：%s", balance.DivRound(accuracyEth, 4))
 
@@ -81,8 +81,8 @@ func main() {
 		hash, er := evmApp.Mint(data)
 		err = er
 		if err != nil {
-			err = errors.New(fmt.Sprintf("第%d张mint异常，原因：%s", i, err))
-			return
+			log.Errorf("第%d张mint异常，原因：%s", i, err)
+			continue
 		}
 		log.Infof("第%d张mint成功，hash：%s", i, hash)
 		time.Sleep(3 * time.Second)
