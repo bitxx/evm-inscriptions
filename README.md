@@ -1,5 +1,8 @@
 # evm-inscriptions
-evm生态铭文脚本
+evm生态铭文脚本  
+`说明：`  
+用第三方平台打铭文，得提供自己的密钥，总是不太放心，为此自己开发了这个脚本。  
+代码很简单，没后门，为了方便使用，我编译了几个常用平台。不放心的可以自行审阅代码并重新编译  
 
 # 编译
 ```shell
@@ -12,9 +15,12 @@ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o mint.exe main.go
 # 交叉编译linux
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o mint main.go
 ```
+可使用该项目根目录的`build.sh`脚本，可快速各平台打包  
+`mint`二进制和配置文件`settings.yml`均在同一目录下，配置文件参数设置好，命令行进入当前目录，直接执行`mint`即可  
 
-## 使用方式
-使用linux的用户，基本都会用命令，这里就不介绍linux版的使用方式了，只介绍windows版的：  
+## 针对windows的使用方式
+主要针对行外人  
+使用linux的用户，基本都会用命令，可参考下方windows版的使用方式：  
 1. 解压后，得到两个文件：  
 二进制程序`mint`  
 配置文件`settings.yml`（根据需要调整里面的配置参数，具体参数作用，在里面的备注上已经做了详细解释）  
