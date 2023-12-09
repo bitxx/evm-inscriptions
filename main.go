@@ -85,6 +85,6 @@ func main() {
 			return
 		}
 		log.Infof("第%d张mint成功，hash：%s", i, hash)
-		time.Sleep(5 * time.Second)
+		time.Sleep(3 * time.Second)
 	}
 }
