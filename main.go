@@ -59,7 +59,11 @@ func main() {
 
 	//开始mint
 	for i := 1; i <= config.MintConfig.Times; i++ {
-		time.Sleep(5 * time.Second) //防止多次异常，导致连续mint同一个nonce
+		if err != nil {
+			time.Sleep(10 * time.Second) //如果有异常，则多等待会儿
+		} else {
+			time.Sleep(5 * time.Second) //防止多次异常，导致连续mint同一个nonce
+		}
 
 		balanceStr, er := evmApp.TokenBalanceOf()
 		err = er
