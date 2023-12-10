@@ -2,6 +2,7 @@ package config
 
 type Mint struct {
 	Times      int    //次数
+	Delay      int    //间隔时间
 	PrivateKey string //私钥
 	GasPrice   string
 	GasLimit   string

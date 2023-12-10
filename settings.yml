@@ -13,6 +13,8 @@ chain:
 mint:
   # mint 铸造次数，通俗说，批量铸造多少个，就配置多少
   times: 10
+  # 每次mint间隔时间，单位秒
+  delay: 5
   # 私钥
   privateKey: ""
   # 配置gasPrice，单位是wei ； 备注：1Gwei = 1000000000 wei
