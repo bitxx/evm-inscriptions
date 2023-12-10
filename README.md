@@ -15,8 +15,13 @@ evm生态铭文脚本
 2. 支持[reth](https://reth.cc/list) 的mint，貌似进度已经90%多，还剩不到1万张。这个需要cpu计算，然后才能mint，这整个过程我也整合了。  
 
 # 编译
+需要有golang环境，`1.21.5`及以上的版本  
+
 ```shell
-# 直接编译
+# 项目根目录添加依赖包
+go mod tidy
+
+# 直接编译当前平台
 go build -o mint main.go
 
 # 交叉编译windows
