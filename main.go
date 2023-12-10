@@ -17,7 +17,7 @@ const (
 const (
 	EvmTypeReth = "reth"
 
-	RethDifficulty = "0x007777777" //当前reth难度
+	RethDifficulty = "0x0077777777" //当前reth难度
 )
 
 func init() {
