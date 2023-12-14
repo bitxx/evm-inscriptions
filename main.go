@@ -10,14 +10,12 @@ import (
 )
 
 const (
-	configPath = "settings.dev.yml" //测试专用
-	//configPath = "settings.yml" //正式专用
+	//configPath = "settings.dev.yml" //测试专用
+	configPath = "settings.yml" //正式专用
 )
 
 const (
 	EvmTypeReth = "reth"
-
-	RethDifficulty = "0x0077777777" //当前reth难度
 )
 
 func init() {
