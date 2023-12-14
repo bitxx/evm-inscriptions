@@ -10,8 +10,8 @@ import (
 )
 
 const (
-	//configPath = "settings.dev.yml" //测试专用
-	configPath = "settings.yml" //测试专用
+	configPath = "settings.dev.yml" //测试专用
+	//configPath = "settings.yml" //正式专用
 )
 
 const (
@@ -77,7 +77,7 @@ func main() {
 
 		data := config.MintConfig.Data
 		if config.ChainConfig.ChainType == EvmTypeReth {
-			data = evmApp.RethCalc(RethDifficulty)
+			data = evmApp.RethCalc(config.RethConfig.Difficulty)
 		}
 
 		hash, er := evmApp.Mint(data)

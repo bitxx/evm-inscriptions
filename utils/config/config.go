@@ -12,6 +12,7 @@ type Config struct {
 	Logger      *Logger      `yaml:"logger"`
 	Chain       *Chain       `yaml:"chain"`
 	Mint        *Mint        `yaml:"mint"`
+	Reth        *Reth        `yaml:"reth"`
 	callbacks   []func()
 }
 
@@ -44,6 +45,7 @@ func Setup(s source.Source,
 		Chain:       ChainConfig,
 		Mint:        MintConfig,
 		Logger:      LoggerConfig,
+		Reth:        RethConfig,
 		callbacks:   fs,
 	}
 	var err error

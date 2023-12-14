@@ -65,7 +65,7 @@ func (a *App) RethCalc(difficulty string) string {
 		TotalTime int
 		Result    string
 	}
-	log.Info("reth难度计算中，请稍后...")
+	log.Info(fmt.Sprintf("reth当前难度：%s，计算中，请稍后...", config.RethConfig.Difficulty))
 	begin := time.Now()
 	find := make(chan Result)
 	temp := `data:application/json,{"p":"rerc-20","op":"mint","tick":"rETH","id":"%s","amt":"10000"}`
