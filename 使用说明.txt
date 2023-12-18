@@ -1,7 +1,22 @@
-使用linux的用户，基本都会用命令，这里就不介绍linux版的使用方式了，只介绍windows版的：  
-1. 解压后，得到两个文件：  
-二进制程序`mint`  
-配置文件`settings.yml`（根据需要调整里面的配置参数，具体参数作用，在里面的备注上已经做了详细解释）  
+文件配置方式：
+使用linux的用户，基本都会用命令，这里就不介绍linux版的使用方式了，只介绍windows版的：
+1. 解压后，得到两个文件：
+二进制程序`mint`
+配置文件`settings.yml`（根据需要调整里面的配置参数，具体参数作用，在里面的备注上已经做了详细解释）
 2. 这两个文件放在相同目录下，
-3. windows版，打开cmd命令框，并进入上述文件所在目录(该过程可以去网上找，到处都有讲解步骤)  
+3. windows版，打开cmd命令框，并进入上述文件所在目录(该过程可以去网上找，到处都有讲解步骤)
 4. 然后输入：`./mint` 回车，即可开始执行
+
+命令行参数方式：
+# evm链的最少参数配置
+# --chain-url 节点地址
+# --mint-times 铸造次数
+# --mint-delay 每次铸造间隔
+# --mint-private-key 私钥
+# --mint-gas-limit 自行检查并获取gas limit
+# --mint-gas-price 自行检查并获取gas price
+# --mint-data 16进制
+./mint start --chain-url=https://polygon-bor.publicnode.com --mint-times=10 --mint-delay=5 --mint-gas-price=1000 --mint-gas-limit=1000 --mint-data=0x646174613a2c7b2261223a224e657874496e736372697074696f6e222c2270223a226f7072632d3230222c226f70223a226d696e74222c227469636b223a22616e746561746572222c22616d74223a22313030303030303030227d --mint-private-key=这里输入私钥
+
+# 其余参数，使用如下去查阅：
+main start --help

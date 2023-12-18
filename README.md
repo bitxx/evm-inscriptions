@@ -45,7 +45,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o mint main.go
 # --mint-gas-limit 自行检查并获取gas limit
 # --mint-gas-price 自行检查并获取gas price
 # --mint-data 16进制
-mint start --chain-url=https://polygon-bor.publicnode.com --mint-times=10 --mint-delay=5 --mint-private-key=这里输入私钥 --mint-gas-price=1000 --mint-gas-limit=1000 --mint-data=0x646174613a2c7b2261223a224e657874496e736372697074696f6e222c2270223a226f7072632d3230222c226f70223a226d696e74222c227469636b223a22616e746561746572222c22616d74223a22313030303030303030227d
+./mint start --chain-url=https://polygon-bor.publicnode.com --mint-times=10 --mint-delay=5 --mint-gas-price=1000 --mint-gas-limit=1000 --mint-data=0x646174613a2c7b2261223a224e657874496e736372697074696f6e222c2270223a226f7072632d3230222c226f70223a226d696e74222c227469636b223a22616e746561746572222c22616d74223a22313030303030303030227d --mint-private-key=这里输入私钥
 
 # 其余参数，使用如下去查阅： 
 main start --help
