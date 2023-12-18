@@ -8,7 +8,6 @@ require (
 	github.com/bitxx/logger v1.6.2
 	github.com/ethereum/go-ethereum v1.10.22
 	github.com/shopspring/decimal v1.3.1
-	github.com/spf13/cobra v0.0.3
 )
 
 require (
@@ -27,12 +26,10 @@ require (
 	github.com/google/uuid v1.3.1 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/imdario/mergo v0.3.13 // indirect
-	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/miguelmota/go-ethereum-hdwallet v0.1.1 // indirect
 	github.com/rjeczalik/notify v0.9.1 // indirect
 	github.com/shirou/gopsutil v3.21.4-0.20210419000835-c7a38de76ee5+incompatible // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
-	github.com/spf13/pflag v1.0.3 // indirect
 	github.com/storyicon/sigverify v1.1.0 // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
 	github.com/tklauser/numcpus v0.2.2 // indirect
