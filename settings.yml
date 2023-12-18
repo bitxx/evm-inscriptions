@@ -1,7 +1,6 @@
 ## *** 下方各项配置，确保输入配置格式正确，配置信息首尾注意不要留有空格等，当前版本暂不支持trimspace ***
 application:
   name: evm-inscriptions
-  version: 1.0.4
 chain:
   # evm 通用evm的基本方式打mint，一般情况下，每个平台的mint都是支付手续费，data输入内容，即可mint
   # reth 算力计算，获取结果，然后再去mint，此时不需要配置下方mint中的data

@@ -15,7 +15,6 @@ var (
 
 const (
 	name           = "name"
-	version        = "version"
 	chainType      = "chain-type"
 	chainUrl       = "chain-url"
 	chainTimeout   = "chain-timeout"
@@ -52,9 +51,6 @@ func init() {
 			//优先命令行覆盖配置
 			if name, _ := flag.GetString(name); name != "" {
 				config.ApplicationConfig.Name = name
-			}
-			if version, _ := flag.GetString(version); version != "" {
-				config.ApplicationConfig.Version = version
 			}
 			if chainType, _ := flag.GetString(chainType); chainType != "" {
 				config.ChainConfig.ChainType = chainType
@@ -127,7 +123,6 @@ func init() {
 	cmd := StartCmd.PersistentFlags()
 	cmd.StringVarP(&configPath, "config", "c", "", "Start server with provided configuration file")
 	cmd.String(name, "evm-inscriptions", "node name")
-	cmd.String(version, "v1.0.0", "version")
 	cmd.String(chainType, "evm", "chain type. evm 通用evm的基本方式打mint，一般情况下，每个平台的mint都是支付手续费，data输入内容，即可mint\nreth 算力计算，获取结果，然后再去mint，此时不需要配置下方mint中的data")
 	cmd.String(chainUrl, "", "链结点地址，提示：可前往此处 https://publicnode.com/ 查找满足你需要的免费evm结点url")
 	cmd.Int64(chainTimeout, 60, "请求超时时间，如无特殊必要，默认60即可，单位：秒")
