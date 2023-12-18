@@ -1,7 +1,8 @@
 package config
 
 type Application struct {
-	Name string
+	Name    string
+	Version string
 }
 
 var ApplicationConfig = new(Application)

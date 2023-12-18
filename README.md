@@ -33,6 +33,23 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o mint main.go
 可使用该项目根目录的`build.sh`脚本，可快速各平台打包  
 `mint`二进制和配置文件`settings.yml`均在同一目录下，配置文件参数设置好，命令行进入当前目录，直接执行`mint`即可  
 
+## 命令行参数模式
+目前新版已支持命令行参数模式，如果同时有文件配置参数，则优先命令行参数配置
+```shell
+# evm链的最少参数配置
+# --chain-url 节点地址
+# --mint-times 铸造次数
+# --mint-delay 每次铸造间隔
+# --mint-private-key 私钥
+# --mint-gas-limit 自行检查并获取gas limit
+# --mint-gas-price 自行检查并获取gas price
+# --mint-data 16进制
+mint start --chain-url=https://polygon-bor.publicnode.com --mint-times=10 --mint-delay=5 --mint-private-key=这里输入私钥 --mint-gas-price=1000 --mint-gas-limit=1000 --mint-data=0x646174613a2c7b2261223a224e657874496e736372697074696f6e222c2270223a226f7072632d3230222c226f70223a226d696e74222c227469636b223a22616e746561746572222c22616d74223a22313030303030303030227d
+
+# 其余参数，使用如下去查阅： 
+main start --help
+```
+
 ## 针对windows的使用方式
 主要针对行外人  
 使用linux的用户，基本都会用命令，可参考下方windows版的使用方式：  
