@@ -11,8 +11,7 @@ evm生态铭文脚本
 ![示例](/example.jpg)
 
 # 功能
-1. 理论上目前支持所有evm生态相关公链的铭文mint，目前我只测试了`https://evm.ink/` 中的三条公链`ethereum、bnb、马蹄`,一次性mint千八百张没什么问题，只要你gas足够多
-2. 支持[reth](https://reth.cc/list) 的mint，貌似进度已经90%多，还剩不到1万张。这个需要cpu计算，然后才能mint，这整个过程我也整合了。
+1. 理论上目前支持所有evm生态相关公链的铭文mint，目前我测试了`https://evm.ink/` 中的三条公链`ethereum、bnb、马蹄`,包括AVAX也测试通过，一次性mint千八百张没什么问题，只要你gas足够多
 
 # 编译
 需要有golang环境，`1.21.5`及以上的版本

@@ -1,17 +1,8 @@
 package app
 
 import (
-	"encoding/hex"
 	"evm-inscriptions/utils/config"
-	"evm-inscriptions/utils/log"
-	"fmt"
 	"github.com/bitxx/ethutil"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto"
-	"math/rand"
-	"runtime"
-	"strings"
-	"time"
 )
 
 type App struct {
@@ -55,11 +46,11 @@ func (a *App) Mint(data string) (hash string, err error) {
 
 // RethCalc
 //
-//	@Description: reth计算难度结果
+//	@Description: reth计算难度结果。这个是以前reth项目计算难度的方法，该项目已mint结束，注销此方法
 //	@receiver a
 //	@param difficulty
 //	@return string
-func (a *App) RethCalc(difficulty string) string {
+/*func (a *App) RethCalc(difficulty string) string {
 
 	type Result struct {
 		TotalTime int
@@ -101,4 +92,4 @@ func (a *App) RethCalc(difficulty string) string {
 			return result
 		}
 	}
-}
+}*/

@@ -6,7 +6,6 @@ require (
 	github.com/bitxx/ethutil v1.1.2
 	github.com/bitxx/load-config v1.6.0
 	github.com/bitxx/logger v1.6.2
-	github.com/ethereum/go-ethereum v1.10.22
 	github.com/shopspring/decimal v1.3.1
 )
 
@@ -20,6 +19,7 @@ require (
 	github.com/btcsuite/btcutil v1.0.3-0.20201208143702-a53e38424cce // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
+	github.com/ethereum/go-ethereum v1.10.22 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-ole/go-ole v1.2.1 // indirect
 	github.com/go-stack/stack v1.8.0 // indirect

@@ -10,12 +10,8 @@ import (
 )
 
 const (
-	//configPath = "settings.dev.yml" //测试专用
-	configPath = "settings.yml" //正式专用
-)
-
-const (
-	EvmTypeReth = "reth"
+	configPath = "settings.dev.yml" //测试专用
+	//configPath = "settings.yml" //正式专用
 )
 
 func init() {
@@ -73,12 +69,7 @@ func main() {
 		}
 		log.Infof("当前账户余额：%s", balance.DivRound(accuracyEth, 4))
 
-		data := config.MintConfig.Data
-		if config.ChainConfig.ChainType == EvmTypeReth {
-			data = evmApp.RethCalc(config.RethConfig.Difficulty)
-		}
-
-		hash, er := evmApp.Mint(data)
+		hash, er := evmApp.Mint(config.MintConfig.Data)
 		err = er
 		if err != nil {
 			log.Errorf("第%d张mint异常，原因：%s", i, err)
