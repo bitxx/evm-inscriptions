@@ -2,17 +2,21 @@ package app
 
 import (
 	"evm-inscriptions/utils/config"
-	"github.com/bitxx/ethutil"
+	"evm-inscriptions/utils/log"
+	"fmt"
+	"github.com/bitxx/evm-utils"
+	"strconv"
 )
 
 type App struct {
-	client *ethutil.EthClient
+	client *evmutils.EthClient
+	Nonce  int
 }
 
 func NewApp() *App {
 
 	return &App{
-		client: ethutil.NewEthClient(config.ChainConfig.Url, config.ChainConfig.Timeout),
+		client: evmutils.NewEthClient(config.ChainConfig.Url, config.ChainConfig.Timeout),
 	}
 }
 
@@ -41,7 +45,26 @@ func (a *App) Mint(data string) (hash string, err error) {
 	if err != nil {
 		return "", err
 	}
-	return a.client.TokenTransfer(config.MintConfig.PrivateKey, config.MintConfig.GasPrice, config.MintConfig.GasLimit, "", "0", account.Address, data)
+
+	//确保获取最新nonce
+	if a.Nonce <= 0 {
+		for {
+			nc, err := a.client.Nonce(account.Address)
+			if err != nil {
+				log.Error(fmt.Sprintf("address: %s,nonce get error: %s", account.Address, err.Error()))
+				continue
+			}
+			a.Nonce = int(nc)
+			break
+		}
+	}
+
+	hash, err = a.client.TokenTransfer(config.MintConfig.PrivateKey, strconv.Itoa(a.Nonce), config.MintConfig.GasPrice, config.MintConfig.GasLimit, "", "0", account.Address, data)
+	if err != nil {
+		return
+	}
+	a.Nonce += 1 //更新nonce
+	return
 }
 
 // RethCalc
