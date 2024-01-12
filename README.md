@@ -12,6 +12,7 @@ evm生态铭文脚本
 
 # 功能
 1. 理论上目前支持所有evm生态相关公链的铭文mint，目前我测试了`https://evm.ink/` 中的三条公链`ethereum、bnb、马蹄`,还有AVAX也测试通过，一次性mint百八十万张没什么问题，只要你gas足够多
+2. `注⚠️`：从`1.0.6`版本开始，一个私钥配置只能对应一个窗口程序mint，不可开多个窗口使用相同私钥，否则会因为nonce异常出现严重的mint异常。后续我会根据需要，考虑是否搞异步mint，提高效率。
 
 ## 下载入口
 不想编译或者不会编译的，可以直接使用我编译好的二进制直接操作：[evm-inscriptions已编译程序下载入口](https://github.com/bitxx/evm-inscriptions/releases)  
