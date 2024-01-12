@@ -3,7 +3,7 @@ module evm-inscriptions
 go 1.21.5
 
 require (
-	github.com/bitxx/ethutil v1.1.2
+	github.com/bitxx/evm-utils v1.2.1
 	github.com/bitxx/load-config v1.6.0
 	github.com/bitxx/logger v1.6.2
 	github.com/shopspring/decimal v1.3.1
