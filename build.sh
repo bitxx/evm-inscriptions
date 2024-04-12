@@ -8,7 +8,7 @@ rm -f mint
 sleep 3
 
 # macos amd64
-CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o mint main.go
+CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o mint main.go
 tar czvf "evm-inscriptions-macos-amd64".tar.gz mint settings.yml 使用说明.txt
 rm -f mint
 
